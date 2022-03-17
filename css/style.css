@@ -33,6 +33,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 .container {
   width: 30vw;
@@ -206,7 +207,7 @@ main {
     width: 90%;
   }
   .song-list {
-    width: 85%;
+    width: 100%;
   }
 }
 
@@ -219,4 +220,5 @@ main {
   padding: 8px 16px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   border-radius: 3px;
+  border: 1px solid var(--theme-border);
 }
