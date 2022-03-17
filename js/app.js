@@ -45,6 +45,7 @@ async function musicAppMain() {
     data = [...songsMain];
     LoadMusicList(data);
     showMusicList();
+    searchBox.value = '';
   });
   searchBox.addEventListener("keyup", filterSongList);
 
