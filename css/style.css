@@ -205,6 +205,7 @@ main {
 @media only screen and (max-width: 600px) {
   .container {
     width: 90%;
+    min-height: 60vh;
   }
   .song-list {
     width: 100%;
