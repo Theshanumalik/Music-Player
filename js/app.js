@@ -41,7 +41,11 @@ async function musicAppMain() {
   song.addEventListener("ended", playNext);
   progressContainer.addEventListener("click", setProgress);
   menuBtn.addEventListener("click", showMusicList);
-  closeMenuBtn.addEventListener("click", showMusicList);
+  closeMenuBtn.addEventListener("click", () => {
+    data = [...songsMain];
+    LoadMusicList(data);
+    showMusicList();
+  });
   searchBox.addEventListener("keyup", filterSongList);
 
   // updating progress bar
@@ -58,12 +62,14 @@ async function musicAppMain() {
       let code = event.code;
       if (code === "ArrowRight" || code === "ArrowDown") {
         playNext();
+        return 0;
       }
       if (code === "ArrowLeft" || code === "ArrowUp") {
         playPrew();
+        return 0;
       }
     },
-    false
+    true
   );
   // keybordshortcut for PLAY/PAUSE and MENU
   document.addEventListener(
@@ -72,15 +78,19 @@ async function musicAppMain() {
       let code = event.code;
       if (code === "Space") {
         playSong();
+        return 0;
       } else if (code === "KeyM") {
         showMusicList();
+        return 0;
       } else if (code === "KeyT") {
         changeTheme();
+        return 0;
       } else if (code === "KeyF") {
         toggleFullscreen();
+        return 0;
       }
     },
-    false
+    true
   );
 
   // Intializing fuctions Or defination of all functions
