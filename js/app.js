@@ -41,12 +41,7 @@ async function musicAppMain() {
   song.addEventListener("ended", playNext);
   progressContainer.addEventListener("click", setProgress);
   menuBtn.addEventListener("click", showMusicList);
-  closeMenuBtn.addEventListener("click", () => {
-    data = [...songsMain];
-    LoadMusicList(data);
-    showMusicList();
-    searchBox.value = '';
-  });
+  closeMenuBtn.addEventListener("click", showMusicList);
   searchBox.addEventListener("keyup", filterSongList);
 
   // updating progress bar
